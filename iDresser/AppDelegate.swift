@@ -1,14 +1,9 @@
-//
-//  AppDelegate.swift
-//  iDresser
-//
-//  Created by Kateryna Avramenko on 27.01.23.
-//
+
 
 import UIKit
 import CoreData
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
