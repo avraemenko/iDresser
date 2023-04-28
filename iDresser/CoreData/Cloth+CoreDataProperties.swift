@@ -22,6 +22,7 @@ extension Cloth {
     @NSManaged public var imageD: Data?
     @NSManaged public var type: String?
     @NSManaged public var shelf: String?
+    @NSManaged public var relationship: Outfit?
 
 }
 

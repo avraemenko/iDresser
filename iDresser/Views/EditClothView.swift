@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CoreML
 
 @available(iOS 14.0, *)
 struct EditClothView: View {
@@ -48,41 +49,23 @@ struct EditClothView: View {
             self.typeInt = typeInt
             self.colorInt = colorInt
             self.shelfInt = shelfInt
-            testReommender()
+            testRecommender()
         }
     }
     
-    func testReommender(){
+    func testRecommender(){
         
-        NetworkService().fetchWeatherData(lat: LocationManager().location?.coordinate.latitude ?? 44.34, lon: LocationManager().location?.coordinate.longitude ?? 10.99) { weatherData in
-            print("Latitude: \(LocationManager().location?.coordinate.longitude ?? 10.99)")
-            let temperature = weatherData?.main.temp
-            let humidity = weatherData?.main.humidity
-            let rain = weatherData?.rain?.oneHour ?? 0
-            
-            
-            let inputFeatures: [String: Any] = [
-                "Clothing_Type": "t-shirt",
-                "Color": "green",
-                "Min_Temperature": 27,
-                "Max_Temperature": 38,
-                "Min_Humidity": 0,
-                "Max_Humidity": 100,
-                "Min_Precipitation": 0,
-                "Max_Precipitation": 10
-            ]
-            
-            let model = MyTabularClassifier_1()
-            guard let recommendation = try? model.prediction(id_: 1, type: self.cloth.type ?? "T-shirt", color: "black", min_temperature: temperature!, max_temperature: temperature!, humidity: Double(humidity!), precipitation: rain)
-                    
-                    
-            else {
-                fatalError("Unexpected runtime error.")
-            }
-            print(recommendation.shelf)
-            
-        }
+                NetworkService().fetchWeatherData(lat: LocationManager().location?.coordinate.latitude ?? 44.34, lon: LocationManager().location?.coordinate.longitude ?? 10.99) { weatherData in
+        //            print("Latitude: \(LocationManager().location?.coordinate.longitude ?? 10.99)")
+        //            let temperature = weatherData?.main.temp
+        //            let humidity = weatherData?.main.humidity
+        //            let rain = weatherData?.rain?.oneHour ?? 0
+        //
+        
+                    let recommender = ClothingRecommender(temperature: weatherData?.main.temp ?? 25)
+        
+        
     }
-    
-    
+        
+    }
 }

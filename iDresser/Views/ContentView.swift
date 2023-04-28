@@ -21,6 +21,9 @@ struct ContentView: View {
     @State var showEditAction = false
     @State var showEdit = false
     @State var showAlert = false
+    @State var showOutfitRecommender = false
+    @State var showOutfitHistory = false
+
     
     @State var inCategoryType = ""
     
@@ -102,7 +105,53 @@ struct ContentView: View {
                     }
                    
                     .navigationBarTitle("iDresser", displayMode: .inline)
-                    .navigationBarItems(trailing: Button(action: {
+//                    .navigationBarItems(leading: Button(action: {
+//                        // Add action to navigate to OutfitRecommenderView
+//                    }) {
+//                        Image(systemName: "wand.and.stars")
+//                    }, trailing: Button(action: {
+//                        self.showAddSheet.toggle()
+//                    }) {
+//                        Image(systemName: "plus.circle")
+//                    }
+//                        .sheet(isPresented: self.$showAddSheet) {
+//                            AddClothView()
+//                                .environment(\.managedObjectContext, self.moc)
+//                        }
+//                    )
+
+//                    .navigationBarItems(leading: NavigationLink(destination: OutfitRecommenderView().environment(\.managedObjectContext, self.moc), isActive: $showOutfitRecommender) {
+//                        Button(action: {
+//                            self.showOutfitRecommender.toggle()
+//                        }) {
+//                            Image(systemName: "wand.and.stars")
+//                        }
+//                    },trailing: Button(action: {
+//                        self.showAddSheet.toggle()
+//                    }) {
+//                        Image(systemName: "plus.circle")
+//                    }
+//                        .sheet(isPresented: self.$showAddSheet) {
+//                            AddClothView()
+//                                .environment(\.managedObjectContext, self.moc)
+//                        }
+//                    )
+                    .navigationBarItems(leading: HStack {
+                        NavigationLink(destination: OutfitRecommenderView().environment(\.managedObjectContext, self.moc), isActive: $showOutfitRecommender) {
+                            Button(action: {
+                                self.showOutfitRecommender.toggle()
+                            }) {
+                                Image(systemName: "wand.and.stars")
+                            }
+                        }
+                        NavigationLink(destination: OutfitHistoryView().environment(\.managedObjectContext, self.moc), isActive: $showOutfitHistory) {
+                            Button(action: {
+                                self.showOutfitHistory.toggle()
+                            }) {
+                                Image(systemName: "clock")
+                            }
+                        }
+                    }, trailing: Button(action: {
                         self.showAddSheet.toggle()
                     }) {
                         Image(systemName: "plus.circle")
@@ -112,6 +161,7 @@ struct ContentView: View {
                                 .environment(\.managedObjectContext, self.moc)
                         }
                     )
+
                 }
         
                 // VStack for main view end
@@ -119,9 +169,20 @@ struct ContentView: View {
                                   UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                               }
             } .onAppear {
-                print (clothes)
+              
             }//ZStack end
         }
+//        .actionSheet(isPresented: self.$showEditAction) {
+//            ActionSheet(title: Text("Select Options"), buttons: [
+//                .default(Text("Edit")) {
+//                    self.showEdit.toggle()
+//                },
+//                .destructive(Text("Delete")) {
+//                    self.showAlert.toggle()
+//                },
+//                .cancel({ self.editCloth = Cloth.init() })
+//            ])
+//        }
         .actionSheet(isPresented: self.$showEditAction) {
             ActionSheet(title: Text("Select Options"), buttons: [
                 .default(Text("Edit")) {
@@ -130,7 +191,7 @@ struct ContentView: View {
                 .destructive(Text("Delete")) {
                     self.showAlert.toggle()
                 },
-                .cancel({ self.editCloth = Cloth.init() })
+                .cancel({ self.editCloth = nil })
             ])
         }
         .alert(isPresented: self.$showAlert) {
@@ -158,5 +219,27 @@ struct ContentView: View {
         } catch let error as NSError {
             print("Error occurred while deleting objects: \(error.localizedDescription)")
         }
+    }
+    
+    func outfitExistsForToday() -> Bool {
+        let fetchRequest: NSFetchRequest<Outfit> = Outfit.fetchRequest()
+        let calendar = Calendar.current
+        let now = Date()
+        let startOfDay = calendar.startOfDay(for: now)
+        
+        let fromPredicate = NSPredicate(format: "date >= %@", startOfDay as NSDate)
+        let toPredicate = NSPredicate(format: "date <= %@", now as NSDate)
+        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+        
+        fetchRequest.predicate = datePredicate
+        
+        do {
+            let matchingOutfits = try moc.fetch(fetchRequest)
+            return !matchingOutfits.isEmpty
+        } catch {
+            print("Error fetching outfits for today: \(error)")
+            return false
+        }
+        
     }
 }

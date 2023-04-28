@@ -7,5 +7,12 @@
         <attribute name="imageD" optional="YES" attributeType="Binary"/>
         <attribute name="shelf" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Outfit"/>
+    </entity>
+    <entity name="Outfit" representedClassName="Outfit" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="bottomPiece" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cloth"/>
+        <relationship name="topPiece" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cloth"/>
     </entity>
 </model>
