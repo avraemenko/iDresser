@@ -26,7 +26,7 @@ struct OutfitHistoryView: View {
                 }
                 .onDelete(perform: deleteOutfits)
             }
-            .navigationTitle("Outfit History")
+            .navigationTitle("Outfits")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack {
@@ -70,7 +70,7 @@ struct OutfitRow: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Date: \(formattedDate(date: outfit.date))")
+                Text("Outfit of \(formattedDate(date: outfit.date))")
                     .font(.headline)
                 HStack{
                     Image(uiImage: (UIImage(data: outfit.topPiece?.imageD ?? Data()) ?? UIImage(systemName: "questionmark.app"))!)

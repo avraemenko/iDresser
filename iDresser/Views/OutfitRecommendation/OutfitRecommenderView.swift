@@ -16,6 +16,8 @@ struct OutfitRecommenderView: View {
     @State private var bottomImage: Data? = nil
     @State private var randomEmoji: String = ""
     @State private var temperature: Int = 25
+    @State private var recommendedTopClothType = ""
+    @State private var recommendedBottomClothType = ""
     
       var body: some View {
           NavigationView {
@@ -33,10 +35,10 @@ struct OutfitRecommenderView: View {
                           .frame(maxWidth: 300, maxHeight: 300)
                   } else {
                       VStack {
-                          Text("No top available:(")
+                          Text("The recommended top for today is \(recommendedTopClothType).")
                           
                           NavigationLink(destination: AddClothView()) {
-                              Text("Add More Top Clothes")
+                              Text("Add More \(recommendedTopClothType)s")
                                   .foregroundColor(.white)
                                   .padding()
                                   .background(Color.gray)
@@ -53,18 +55,16 @@ struct OutfitRecommenderView: View {
                           .frame(maxWidth: 400, maxHeight: 400)
                   } else {
                       VStack {
-                          
-                          Text("No bottom available:(")
-                              .font(.system(size: 10))
-                              .foregroundColor(.gray)
-                          
                           NavigationLink(destination: AddClothView()) {
-                              Text("Add More Bottom Clothes")
+                              Text("Add More \(recommendedBottomClothType)")
                                   .foregroundColor(.white)
                                   .padding()
                                   .background(Color.gray)
                                   .cornerRadius(15)
                           }
+                          Text("The recommended bottom for today is \(recommendedBottomClothType).")
+                              .font(.system(size: 10))
+                              .foregroundColor(.gray)
                       }.frame(maxWidth: 400, maxHeight: 400, alignment: .center)
                   }
               }
@@ -77,27 +77,52 @@ struct OutfitRecommenderView: View {
     
     func fetchOutfit() {
         let recommender = ClothingRecommender(temperature: 25)
-        recommender.getTopCloth()
-        recommender.getBottomCloth()
         let tops = clothes.filter { $0.shelf == "Top" }
-        let bottoms = clothes.filter { $0.shelf == "bottom" }
+        let bottoms = clothes.filter { $0.shelf == "Bottoms" }
+    
+        recommendedTopClothType = recommender.getTopCloth()
+        recommendedBottomClothType = recommender.getBottomCloth()
         
-        if let randomTop = tops.randomElement() {
-            topImage = randomTop.imageD ?? Data()
+        let desiredTops = tops.filter { top in
+            top.type?.lowercased() == recommendedTopClothType.lowercased()
+        }
+
+        if let randomDesiredTop = desiredTops.randomElement() {
+            if let imageD = randomDesiredTop.imageD {
+                print("Random desired top: \(randomDesiredTop)")
+                topImage = randomDesiredTop.imageD ?? Data()
+            } else {
+                print("Random desired top does not have an imageD property.")
+            }
+        } else {
+          
         }
         
-        if let randomBottom = bottoms.randomElement() {
-            bottomImage = randomBottom.imageD ?? Data()
+        let desiredBottoms = bottoms.filter { bottom in
+            bottom.type?.lowercased() == recommendedBottomClothType.lowercased()
+        }
+        print(recommendedTopClothType)
+        print(desiredTops, desiredBottoms)
+        
+        if let randomDesiredBottom = desiredBottoms.randomElement() {
+            if let imageD = randomDesiredBottom.imageD {
+                bottomImage = randomDesiredBottom.imageD ?? Data()
+                print("Random desired bottom: \(randomDesiredBottom)")
+            } else {
+                print("Random desired bottom does not have an imageD property.")
+            }
+        } else {
+           // print("The recommended top for today is \(recommendedTopClothType).")
         }
         
         randomEmoji = getRandomEmoji()
     }
     
     func getRandomEmoji() -> String {
-        let emojiStart = 0x1F600
-        let ascii = emojiStart + Int(arc4random_uniform(UInt32(64)))
-        let emoji = UnicodeScalar(ascii) ?? UnicodeScalar(emojiStart)!
-        return String(emoji)
+        let happyEmojis = ["😀", "😃", "😄", "😁", "😆", "☺️", "😊", "😇"]
+        let randomIndex = Int(arc4random_uniform(UInt32(happyEmojis.count)))
+        return happyEmojis[randomIndex]
     }
+
 }
 

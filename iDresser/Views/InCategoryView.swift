@@ -48,9 +48,11 @@ struct InCategoryView: View {
                                                     Image(uiImage: UIImage(data: cloth.imageD ?? self.image)!)
                                                         .renderingMode(.original)
                                                         .resizable()
+                                                        .scaledToFill()
                                                         .frame(maxWidth: 155, maxHeight: 155)
                                                         .cornerRadius(5)
-                                                        .scaledToFill()
+                                                        .aspectRatio(contentMode: .fit)
+                                                        .clipped()
                                                 }
                                                 .sheet(isPresented: self.$showEdit) {
                                                     if #available(iOS 14.0, *) {

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5407C38E29DD5FE90025A449 /* iDresserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5407C38D29DD5FE90025A449 /* iDresserApp.swift */; };
-		5407C39229DD5FE90025A449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5407C39129DD5FE90025A449 /* Assets.xcassets */; };
 		5407C39529DD5FE90025A449 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5407C39429DD5FE90025A449 /* Preview Assets.xcassets */; };
 		5407C3AC29DD607A0025A449 /* GlobalEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5407C39B29DD60790025A449 /* GlobalEnvironment.swift */; };
 		5407C3AE29DD607A0025A449 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5407C39D29DD60790025A449 /* ContentView.swift */; };
@@ -33,12 +32,10 @@
 		542CDF7A29DF397400A55B6B /* ClothSaveSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542CDF7929DF397400A55B6B /* ClothSaveSection.swift */; };
 		542CDF7C29DF3A1300A55B6B /* ClothPropertiesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542CDF7B29DF3A1300A55B6B /* ClothPropertiesSection.swift */; };
 		5491EEB829E04CAA00BBAC75 /* ClothingRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5491EEB729E04CAA00BBAC75 /* ClothingRecommender.swift */; };
-		54CA848929E03D0E0006F2A9 /* MyTabularClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 54CA848829E03D0E0006F2A9 /* MyTabularClassifier 1.mlmodel */; };
 		54CA848D29E03DCD0006F2A9 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CA848C29E03DCD0006F2A9 /* WeatherForecast.swift */; };
 		54CA849029E03FA50006F2A9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CA848F29E03FA50006F2A9 /* LocationManager.swift */; };
 		54CA849329E042FF0006F2A9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CA849229E042FF0006F2A9 /* NetworkService.swift */; };
-		54CADCA229FA769D00FCDE65 /* MyRecommender 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 54CADCA129FA769D00FCDE65 /* MyRecommender 1.mlmodel */; };
-		54E6FBE329FA8307004E95F3 /* MyTabularClassifier2 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 54E6FBE229FA8307004E95F3 /* MyTabularClassifier2 1.mlmodel */; };
+		54CE025529FD2A8B00CC17A3 /* outfits.json in Resources */ = {isa = PBXBuildFile; fileRef = 54CE025429FD2A8B00CC17A3 /* outfits.json */; };
 		54E6FBE829FA86FF004E95F3 /* OutfitRecommenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E6FBE729FA86FF004E95F3 /* OutfitRecommenderView.swift */; };
 		54E6FBEA29FAD327004E95F3 /* OutfitRecommender.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 54E6FBE929FAD327004E95F3 /* OutfitRecommender.mlmodel */; };
 		54E6FBEC29FBB99D004E95F3 /* OutfitHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E6FBEB29FBB99D004E95F3 /* OutfitHistoryView.swift */; };
@@ -47,12 +44,13 @@
 		54E6FBF229FBBD80004E95F3 /* OutfitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E6FBF129FBBD80004E95F3 /* OutfitManager.swift */; };
 		54E6FBF429FBBFAC004E95F3 /* OutfitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E6FBF329FBBFAC004E95F3 /* OutfitView.swift */; };
 		54E6FBF629FBD338004E95F3 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E6FBF529FBD338004E95F3 /* WardrobeView.swift */; };
+		54E6FBF829FC5097004E95F3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54E6FBF729FC5097004E95F3 /* Launch Screen.storyboard */; };
+		54E6FBFA29FC528F004E95F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54E6FBF929FC528F004E95F3 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5407C38A29DD5FE90025A449 /* iDresser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDresser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5407C38D29DD5FE90025A449 /* iDresserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iDresserApp.swift; sourceTree = "<group>"; };
-		5407C39129DD5FE90025A449 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5407C39429DD5FE90025A449 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5407C39B29DD60790025A449 /* GlobalEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalEnvironment.swift; sourceTree = "<group>"; };
 		5407C39D29DD60790025A449 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,12 +75,10 @@
 		542CDF7929DF397400A55B6B /* ClothSaveSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothSaveSection.swift; sourceTree = "<group>"; };
 		542CDF7B29DF3A1300A55B6B /* ClothPropertiesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothPropertiesSection.swift; sourceTree = "<group>"; };
 		5491EEB729E04CAA00BBAC75 /* ClothingRecommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingRecommender.swift; sourceTree = "<group>"; };
-		54CA848829E03D0E0006F2A9 /* MyTabularClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "MyTabularClassifier 1.mlmodel"; sourceTree = "<group>"; };
 		54CA848C29E03DCD0006F2A9 /* WeatherForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
 		54CA848F29E03FA50006F2A9 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		54CA849229E042FF0006F2A9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		54CADCA129FA769D00FCDE65 /* MyRecommender 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "MyRecommender 1.mlmodel"; path = "../../../../../Desktop/MyRecommender 1.mlmodel"; sourceTree = "<group>"; };
-		54E6FBE229FA8307004E95F3 /* MyTabularClassifier2 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "MyTabularClassifier2 1.mlmodel"; path = "../../../../../Desktop/MyTabularClassifier2 1.mlmodel"; sourceTree = "<group>"; };
+		54CE025429FD2A8B00CC17A3 /* outfits.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = outfits.json; sourceTree = "<group>"; };
 		54E6FBE729FA86FF004E95F3 /* OutfitRecommenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitRecommenderView.swift; sourceTree = "<group>"; };
 		54E6FBE929FAD327004E95F3 /* OutfitRecommender.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = OutfitRecommender.mlmodel; path = ../../../../../Desktop/OutfitRecommender.mlmodel; sourceTree = "<group>"; };
 		54E6FBEB29FBB99D004E95F3 /* OutfitHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitHistoryView.swift; sourceTree = "<group>"; };
@@ -91,6 +87,8 @@
 		54E6FBF129FBBD80004E95F3 /* OutfitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitManager.swift; sourceTree = "<group>"; };
 		54E6FBF329FBBFAC004E95F3 /* OutfitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitView.swift; sourceTree = "<group>"; };
 		54E6FBF529FBD338004E95F3 /* WardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
+		54E6FBF729FC5097004E95F3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		54E6FBF929FC528F004E95F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +121,7 @@
 		5407C38C29DD5FE90025A449 /* iDresser */ = {
 			isa = PBXGroup;
 			children = (
+				54CE025429FD2A8B00CC17A3 /* outfits.json */,
 				54CA848E29E03F850006F2A9 /* LocationManager */,
 				54CA848B29E03DA30006F2A9 /* WeatherProcessing */,
 				54CA848129E03BB80006F2A9 /* OutfitRecommendation */,
@@ -132,8 +131,9 @@
 				5436B63B29DDC5E30092DC18 /* CoreData */,
 				5407C38D29DD5FE90025A449 /* iDresserApp.swift */,
 				5407C39F29DD60790025A449 /* ImagePicker.swift */,
-				5407C39129DD5FE90025A449 /* Assets.xcassets */,
+				54E6FBF929FC528F004E95F3 /* Assets.xcassets */,
 				5407C39329DD5FE90025A449 /* Preview Content */,
+				54E6FBF729FC5097004E95F3 /* Launch Screen.storyboard */,
 			);
 			path = iDresser;
 			sourceTree = "<group>";
@@ -210,10 +210,7 @@
 		54CA848129E03BB80006F2A9 /* OutfitRecommendation */ = {
 			isa = PBXGroup;
 			children = (
-				54E6FBE229FA8307004E95F3 /* MyTabularClassifier2 1.mlmodel */,
-				54CADCA129FA769D00FCDE65 /* MyRecommender 1.mlmodel */,
 				54E6FBE929FAD327004E95F3 /* OutfitRecommender.mlmodel */,
-				54CA848829E03D0E0006F2A9 /* MyTabularClassifier 1.mlmodel */,
 				5491EEB729E04CAA00BBAC75 /* ClothingRecommender.swift */,
 			);
 			path = OutfitRecommendation;
@@ -305,8 +302,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E6FBF829FC5097004E95F3 /* Launch Screen.storyboard in Resources */,
 				5407C39529DD5FE90025A449 /* Preview Assets.xcassets in Resources */,
-				5407C39229DD5FE90025A449 /* Assets.xcassets in Resources */,
+				54CE025529FD2A8B00CC17A3 /* outfits.json in Resources */,
+				54E6FBFA29FC528F004E95F3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,10 +325,8 @@
 				54E6FBEC29FBB99D004E95F3 /* OutfitHistoryView.swift in Sources */,
 				54E6FBF029FBBC4D004E95F3 /* Outfit+CoreDataProperties.swift in Sources */,
 				5407C3AC29DD607A0025A449 /* GlobalEnvironment.swift in Sources */,
-				54CADCA229FA769D00FCDE65 /* MyRecommender 1.mlmodel in Sources */,
 				5407C3BA29DD607A0025A449 /* EachCloth.swift in Sources */,
 				5407C3B029DD607A0025A449 /* ImagePicker.swift in Sources */,
-				54E6FBE329FA8307004E95F3 /* MyTabularClassifier2 1.mlmodel in Sources */,
 				5407C3AE29DD607A0025A449 /* ContentView.swift in Sources */,
 				542CDF7129DF2D4500A55B6B /* ColorClassifier.mlmodel in Sources */,
 				542CDF7629DF391D00A55B6B /* ClothImageSection.swift in Sources */,
@@ -348,7 +345,6 @@
 				5407C3B629DD607A0025A449 /* CategoryRow.swift in Sources */,
 				5407C3B929DD607A0025A449 /* ClothingClassifier 1.mlmodel in Sources */,
 				5407C38E29DD5FE90025A449 /* iDresserApp.swift in Sources */,
-				54CA848929E03D0E0006F2A9 /* MyTabularClassifier 1.mlmodel in Sources */,
 				542CDF6C29DF1B1B00A55B6B /* ClothingClassifier.mlmodel in Sources */,
 				5491EEB829E04CAA00BBAC75 /* ClothingRecommender.swift in Sources */,
 				54E6FBEA29FAD327004E95F3 /* OutfitRecommender.mlmodel in Sources */,
@@ -491,6 +487,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -523,6 +520,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
