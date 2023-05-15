@@ -8,11 +8,15 @@
 import Foundation
 import SwiftUI
 import CoreData
+import CoreML
 
 struct AddOutfitView: View {
     @Environment(\.managedObjectContext) var moc
 
     @Environment(\.presentationMode) private var presentationMode
+    
+    @State private var model: MLModel?
+
     
     @FetchRequest(
         entity: Cloth.entity(),

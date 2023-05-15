@@ -34,7 +34,8 @@ struct CategoryRow: View {
     }
     
     init(filter: String, selectedCloth: Binding<Cloth?>) {
-        fetchRequest = FetchRequest<Cloth>(entity: Cloth.entity(), sortDescriptors: [], predicate: NSPredicate(format: "shelf == %@", filter))
+        let sortDescriptor = NSSortDescriptor(keyPath: \Cloth.favo, ascending: false)
+        fetchRequest = FetchRequest<Cloth>(entity: Cloth.entity(), sortDescriptors: [sortDescriptor], predicate: NSPredicate(format: "shelf == %@", filter))
         shelf = filter
         _selectedCloth = selectedCloth
     }

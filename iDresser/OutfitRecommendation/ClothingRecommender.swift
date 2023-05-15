@@ -27,10 +27,16 @@ class ClothingRecommender{
     
     func getTopCloth() -> String {
         if let recommendedOutfit = recommendedOutfit {
-            let outfitComponents = recommendedOutfit.split(separator: "_")
-            let recommendedTop = outfitComponents[1]
-            print("Top: \(recommendedTop)")
-            return String(recommendedTop)
+            if !recommendedOutfit.contains("winter_outwear") {
+                let outfitComponents = recommendedOutfit.split(separator: "_")
+                let recommendedTop = outfitComponents[1]
+                return String(recommendedTop)
+            }
+            else {
+                let outfitComponents = recommendedOutfit.split(separator: "_")
+                let recommendedTop = "\(outfitComponents[0]) \(outfitComponents[1])"
+                return String(recommendedTop)
+            }
         } else {
             print("Error: Could not extract recommended outfit.")
         }
@@ -40,10 +46,16 @@ class ClothingRecommender{
     
     func getBottomCloth() -> String {
         if let recommendedOutfit = recommendedOutfit {
-            let outfitComponents = recommendedOutfit.split(separator: "_")
-            let recommendedBottom = outfitComponents[0]
-            print("Bottom: \(recommendedBottom)")
-            return String(recommendedBottom)
+            if !recommendedOutfit.contains("winter_outwear") {
+                let outfitComponents = recommendedOutfit.split(separator: "_")
+                let recommendedBottom = outfitComponents[0]
+                return String(recommendedBottom)
+            }
+            else {
+                let outfitComponents = recommendedOutfit.split(separator: "_")
+                let recommendedTop = "\(outfitComponents[2])"
+                return String(recommendedTop)
+            }
         } else {
             print("Error: Could not extract recommended outfit.")
         }

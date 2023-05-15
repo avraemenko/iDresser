@@ -49,23 +49,7 @@ struct EditClothView: View {
             self.typeInt = typeInt
             self.colorInt = colorInt
             self.shelfInt = shelfInt
-            testRecommender()
         }
     }
-    
-    func testRecommender(){
-        
-                NetworkService().fetchWeatherData(lat: LocationManager().location?.coordinate.latitude ?? 44.34, lon: LocationManager().location?.coordinate.longitude ?? 10.99) { weatherData in
-        //            print("Latitude: \(LocationManager().location?.coordinate.longitude ?? 10.99)")
-        //            let temperature = weatherData?.main.temp
-        //            let humidity = weatherData?.main.humidity
-        //            let rain = weatherData?.rain?.oneHour ?? 0
-        //
-        
-                    let recommender = ClothingRecommender(temperature: weatherData?.main.temp ?? 25)
-        
-        
-    }
-        
-    }
+
 }

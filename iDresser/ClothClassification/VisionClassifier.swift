@@ -45,25 +45,17 @@ class VisionClassifier {
     }
     
     func classify(_ image: UIImage, completion: @escaping (String) -> Void) {
-        
         self.completion = completion
-        
         DispatchQueue.global().async {
-            
             guard let cgImage = image.cgImage else {
                 return
             }
-            
             let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-            
             do {
                 try handler.perform(self.requests)
             } catch {
                 print(error.localizedDescription)
             }
-            
         }
-        
     }
-    
 }

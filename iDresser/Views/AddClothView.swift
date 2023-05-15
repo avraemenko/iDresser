@@ -95,13 +95,10 @@ struct AddClothView: View {
                 },
                 colorCompletionHandler: { colorLabel in
                 if let index = GlobalEnvironment.clothColors.firstIndex(where: { $0.lowercased() == colorLabel }) {
-                    print("Index of \(colorLabel): \(index)")
                     self.colorInt = index
                 } else {
                     print("Color not found")
                 }
-                print(self.colorInt)
-                print(colorLabel)
                 }
             )
         })

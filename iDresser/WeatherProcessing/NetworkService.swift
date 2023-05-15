@@ -7,9 +7,11 @@
 
 import Foundation
 
-let apiKey = "3b80982d4cc4d739f236ec05272fa4bd"
+let apiKey = "797436a75f3701700e1737aa893ba6b3"
 
 class NetworkService {
+    
+    static let shared = NetworkService()
     
     func fetchWeatherData(lat: Double, lon: Double, completion: @escaping (WeatherApiResponse?) -> Void) {
         let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&units=metric&appid=\(apiKey)"

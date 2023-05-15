@@ -11,6 +11,7 @@ import SwiftUI
 struct InCategoryView: View {
         @Environment(\.managedObjectContext) var moc
         @FetchRequest(entity: Cloth.entity(), sortDescriptors: [
+            NSSortDescriptor(keyPath: \Cloth.favo, ascending: false),
             NSSortDescriptor(keyPath: \Cloth.id, ascending: true)
             ]
         ) var clothes: FetchedResults<Cloth>

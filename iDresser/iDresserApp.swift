@@ -24,6 +24,9 @@ struct iDresserApp: App {
             switch newScenePhase {
             case .background:
                 persistenceController.saveContext()
+                NotificationManager.shared.checkIfOutfitAdded(using: persistenceController.container.viewContext)
+            case .inactive:
+                NotificationManager.shared.checkIfOutfitAdded(using: persistenceController.container.viewContext)
             default:
                 break
             }

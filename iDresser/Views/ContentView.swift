@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @State private var selection = 0
-
+    
     var body: some View {
         TabView(selection: $selection) {
             WardrobeView()
@@ -32,6 +32,11 @@ struct ContentView: View {
                     }
                 }
                 .tag(1)
+        }.onAppear{
+            DispatchQueue.main.async {
+                LocationManager.shared.requestLocation()
+              
+                } 
         }
     }
 }
